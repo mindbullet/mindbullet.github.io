@@ -107,6 +107,7 @@ textarea {
 }
 
 #mySubmit {
+  display: block;
   margin-left: 9.5em;
 }
 

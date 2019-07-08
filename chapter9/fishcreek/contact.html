@@ -29,15 +29,25 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="askvet.html">Ask the Vet</a></li>
-        <li><a href="#l">Contact</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
     <main>
       <h2>
         Contact Fish Creek
       </h2>
-      <form>
+      <p>Required fields are marked with an asterisk (*).</p>
+      <form action="post" method="http://webdevbasics.net/scripts/fishcreek.php">
+        <label for="myName">* Name:</label>
+        <input type="text" name="myName" id="myName" required>
 
+        <label for="myEmail">* E-mail:</label>
+        <input type="email" name="myEmail" id="myEmail" required>
+
+        <label for="myComments">* Comments:</label>
+        <textarea name="myComments" id="myComments" rows="2" cols="20" required></textarea>
+      
+        <input type="submit" name="mySubmit" id="mySubmit" value="Send Now">
       </form> 
     </main>
     <footer>
