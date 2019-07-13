@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact - Fish Creek Animal Hospital</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/fishcreek.css">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trnk/html5.js">
+  </script>
+  <![endif]-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" type="text/javascript"></script>
+  <!-- 
+    Magda Patel is a veterinarian and owner of the Fish Creek Animal Hospital.  Her customers
+    are local pet owners who range from children to senior citizens.  Magda would like a website
+    to provide information to her current and potential customers.  She has requested a home page,
+    a services page, a page for advice from a veterinarian, and a contact page.
+  -->
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <h1>
+        Fish Creek Animal Hospital
+      </h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="askvet.html">Ask the Vet</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Contact Fish Creek</h2>
+      <p>Required fields are marked with an asterisk (*).</p>
+      <form 
+        action="post" 
+        method="http://webdevbasics.net/scripts/fishcreek.php"
+      >
+        <label for="myName">Name:</label>
+        <input type="text" name="myName" id="myName">
+
+        <label for="myEmail">* E-mail:</label>
+        <input type="email" name="myEmail" id="myEmail" class="required email">
+
+        <label for="myComments">Comments:</label>
+        <textarea name="myComments" id="myComments" rows="2" cols="20"></textarea>
+
+        <input type="submit" name="mySubmit" id="mySubmit" value="Send Now">
+      </form> 
+    </main>
+    <footer>
+      <div>Copyright &copy; 2019 Fish Creek Animal Hospital</div>
+      <div>Alex Blount</div>
+      <div><a href="mailto:s1188825@student.mcckc.edu">s1188825@student.mcckc.edu</a></div>
+      <div id="date-display"></div>
+    </footer>
+  </div>
+  <script type="text/javascript" src="scripts/fishcreek.js"></script>
+  <script>
+    $(function() {
+      $('form').validate();
+    });
+  </script>
+</body>
+</html>
