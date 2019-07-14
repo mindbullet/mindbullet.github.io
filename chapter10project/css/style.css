@@ -4,19 +4,33 @@ html {
 }
 
 body {
-  background-color: #E1E2E1
+  background-color: #E1E2E1;
+  color: #333;
+  color: rgba(0,0,0,0.87);
+}
+
+header,
+footer {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 header {
   background-color: #004c8b;
-  color: #fff;
+}
+
+footer {
+  background-color: #4b2c20;
+  padding: 1em 0;
+  line-height: 150%;
+  letter-spacing: .2em;
 }
 
 .wrapper {
   margin-left: auto;
   margin-right: auto;
   min-width: 700px;
-  padding: 1em 0;
+  padding: 1em;
   width: 80%;
 }
 
@@ -27,6 +41,7 @@ table {
 
 th,
 td {
+  min-width: 200px;
   padding: 1em;
 }
 
@@ -41,6 +56,9 @@ th {
 td {
   background-color: #fff;
   border-bottom: 1px solid #795548;
+  border-bottom: 1px solid #795548;
+  border-left: 1px dashed #E1E2E1;
+  border-right: 1px dashed #E1E2E1;
   color: #333;
   color: rgba(0,0,0,0.87);
   vertical-align: top;
@@ -73,4 +91,12 @@ a:visited {
 .provider-logo {
   max-width: 150px;
   margin: 1em;
+}
+
+
+/* Tablet size display */
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    margin: 0;
+  }
 }
