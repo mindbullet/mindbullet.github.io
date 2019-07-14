@@ -95,6 +95,11 @@ a:visited {
 }
 
 
+.brand {
+  text-align: left;
+  margin: 0 auto
+}
+
 .brand .logo {
   height: 6em;
   display: inline-block;
@@ -109,10 +114,6 @@ a:visited {
   color: #000;
   font-size: 3em;
   font-family: 'Shadows Into Light', cursive;
-}
-
-.brand {
-  padding-bottom: 1em;
 }
 
 .brand td {
