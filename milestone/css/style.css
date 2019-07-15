@@ -101,9 +101,15 @@ a:visited {
 }
 
 .brand .logo {
-  height: 6em;
   display: inline-block;
-  padding-right: 1em;
+  height: 100%;
+}
+
+.logo-container {
+  background-color: #fff;
+  border-radius: 6em;
+  height: 6em;
+  text-align: center;
 }
 
 .brand .tagline {
@@ -118,6 +124,7 @@ a:visited {
 
 .brand td {
   vertical-align: middle;
+  padding-right: 1em;
 }
 
 nav {
