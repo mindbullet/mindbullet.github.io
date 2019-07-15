@@ -125,6 +125,7 @@ nav ul {
   padding: 1.2em 1em;
   border-bottom: 2px solid #8c180e;
   border-top: 2px solid #8c180e;
+  vertical-align: top;
 }
 
 .menu .item-name {
@@ -170,9 +171,28 @@ nav ul {
   border-bottom: 2px solid #8c180e;
 }
 
-/* Tablet size display */
-@media only screen and (max-width: 1024px) {
+.menu .image {
+  padding-left: 0;
+  width: 200px;
+}
+
+.menu .image img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* small */
+@media only screen and (max-width: 800px) {
   .wrapper {
-    margin: 0 1em;
+    width: 100%;
+    padding: 0 1em;
+  }
+}
+
+/* really small */
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    width: 100%;
+    padding: 0;
   }
 }
