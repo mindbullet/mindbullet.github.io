@@ -1,3 +1,4 @@
+/* mobile first sizes */
 .wf-loading * {
   opacity: 0;
 }
@@ -20,8 +21,6 @@ header {
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
-  width: 80%;
 }
 
 h1, h2 {
@@ -49,6 +48,7 @@ table {
   border-collapse: collapse;
 }
 
+/* Logo at top of page */
 .brand {
   text-align: left;
   margin: 0 auto
@@ -61,8 +61,8 @@ table {
 
 .logo-container {
   background-color: #fff;
-  border-radius: 6em;
-  height: 6em;
+  border-radius: 4em;
+  height: 4em;
   text-align: center;
 }
 
@@ -72,40 +72,13 @@ table {
 
 .brand .name {
   color: #8c180e;
-  font-size: 3em;
+  font-size: 2em;
   font-family: 'Shadows Into Light', cursive;
 }
 
 .brand td {
   vertical-align: middle;
   padding-right: 1em;
-}
-
-nav {
-  background-color: #fff;
-  text-align: center;
-  margin-bottom: 0 !important;
-}
-
-nav a {
-  border-bottom: 3px solid #fff;
-  color: #000;
-  display: inline-block;
-  font-size: .9em;
-  font-weight: bold;
-  padding: 1em 2em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 200ms ease-out;
-}
-
-nav a:hover {
-  border-bottom-color: #c34b36;
-  cursor: pointer;
-}
-
-nav a.active {
-  border-bottom-color: #8c180e!important;
 }
 
 nav ul {
@@ -181,18 +154,130 @@ nav ul {
   max-width: 100%;
 }
 
-/* small */
-@media only screen and (max-width: 800px) {
+.large-nav {
+  display: none;
+}
+
+/* tablet and above */
+@media only screen and (min-width: 768px) {
+
   .wrapper {
-    width: 100%;
-    padding: 0 1em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    width: 80%;
+  }
+
+  .brand {
+    text-align: left;
+    margin: 0 auto
+  }
+  
+  .brand .logo {
+    display: inline-block;
+    height: 100%;
+  }
+  
+  .logo-container {
+    background-color: #fff;
+    border-radius: 6em;
+    height: 6em;
+    text-align: center;
+  }
+  
+  .brand .tagline {
+    color: #666;
+  }
+  
+  .brand .name {
+    color: #8c180e;
+    font-size: 3em;
+    font-family: 'Shadows Into Light', cursive;
+  }
+  
+  .brand td {
+    vertical-align: middle;
+    padding-right: 1em;
+  }
+
+  .mini-nav {
+    display: none;
   }
 }
 
-/* really small */
-@media only screen and (max-width: 800px) {
-  .wrapper {
-    width: 100%;
-    padding: 0;
+
+nav {
+  background-color: #fff;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+  text-align: center;
+}
+
+nav a {
+  border-bottom: 2px solid #fff;
+  color: #000;
+  display: inline-block;
+  font-size: .9em;
+  font-weight: bold;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* transition: all 200ms ease-out; */
+}
+
+nav a:hover {
+  border-bottom-color: #c34b36;
+  cursor: pointer;
+}
+
+nav a.active {
+  border-bottom-color: #8c180e!important;
+}
+
+nav .icon {
+  display: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  nav a {
+    border-width: 0;
+    display: block;
+    float: left;
+    padding: 1em;
+    margin-right: 50px;
+  }
+
+  nav a:not(.active) {
+    display: none;
+  }
+  
+  nav a.icon {
+    display: block;
+    float: right;
+    margin: 0;
+  }
+  
+  nav.responsive {
+    position: relative;
+  }
+
+  nav.responsive .active {
+    background-color: #c34b36;
+    color: #fff;
+  }
+
+  nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+  }
+
+  nav.responsive a {
+    display: block;
+    float: none;
+    text-align: left;
   }
 }
