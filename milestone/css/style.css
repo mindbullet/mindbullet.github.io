@@ -11,6 +11,7 @@ body {
   background-color: #c1c1c1;
   color: #333;
   color: rgba(0,0,0,0.87);
+  overflow-y: scroll;
 }
 
 header {
@@ -24,7 +25,6 @@ header {
 }
 
 h1, h2 {
-  color: #8c180e;
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
 }
@@ -33,7 +33,7 @@ footer {
   color: #fff;
   color: rgba(255, 255, 255, 0.87);
   background-color: #4b2c20;
-  padding: 1em 0;
+  padding: 1em;
   line-height: 150%;
   letter-spacing: .2em;
   word-spacing: .2em;
@@ -42,6 +42,14 @@ footer {
 
 footer .wrapper {
   background-color: #4b2c20;
+}
+
+footer a {
+  color: #fff!important;
+}
+
+footer a:hover {
+  background-color: #c34b36;
 }
 
 table {
@@ -87,7 +95,8 @@ nav ul {
   text-align: center;
 }
 
-.menu {
+.menu,
+.content {
   width: 100%;
   margin: 0 auto;
   max-width: 800px;
@@ -125,7 +134,8 @@ nav ul {
   color: #fff;
 }
 
-.menu-description {
+.menu-description,
+.description {
   font-size: 1.1em;
   background-color: #f4f4f4;
   color: #000;
@@ -158,14 +168,21 @@ nav ul {
   display: none;
 }
 
-/* tablet and above */
-@media only screen and (min-width: 768px) {
+.mobile {
+  display: inline-block;
+}
 
+.desktop {
+  display: none;
+}
+
+/* tablet and above */
+@media only screen and (min-width: 780px) {
   .wrapper {
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-    width: 80%;
+    padding: 0 1em;
   }
 
   .brand {
@@ -203,6 +220,14 @@ nav ul {
   .mini-nav {
     display: none;
   }
+
+  .mobile {
+    display: none;
+  }
+  
+  .desktop {
+    display: inline-block;
+  }
 }
 
 
@@ -214,7 +239,7 @@ nav {
 }
 
 nav a {
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #fff;
   color: #000;
   display: inline-block;
   font-size: .9em;
@@ -223,7 +248,6 @@ nav a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  /* transition: all 200ms ease-out; */
 }
 
 nav a:hover {
@@ -240,7 +264,7 @@ nav .icon {
   padding: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
   nav a {
     border-width: 0;
     display: block;
@@ -280,4 +304,58 @@ nav .icon {
     float: none;
     text-align: left;
   }
+}
+
+
+form {
+  padding: 2em;
+  border-bottom: 2px solid #8c180e;
+  border-top: 2px solid #8c180e;
+}
+
+label.error {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .90em;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-row {
+  margin-bottom: 1.5em;
+}
+
+.form-row input,
+.form-row textarea {
+  border: none;
+  font-size: 1.2em;
+  outline: none;
+  padding: .2em;
+  width: 100%;
+  border: 2px solid #c1c1c1;
+  transition: border-color 256ms ease;
+}
+
+.form-row textarea {
+  min-height: 200px;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #c34b36;
+}
+
+.form-footer {
+  text-align: center;
+}
+
+.form-row input.error,
+.form-row textarea.error {
+  border-color: red;
 }
