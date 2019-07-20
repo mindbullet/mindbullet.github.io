@@ -24,7 +24,7 @@ header {
   margin-right: auto;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
 }
@@ -97,16 +97,21 @@ nav ul {
 
 .menu,
 .content {
-  width: 100%;
+  background-color: #fff;
   margin: 0 auto;
   max-width: 800px;
-  background-color: #fff;
+  width: 100%;
+}
+
+.content {
+  border-bottom: 2px solid #8c180e;
+  border-top: 2px solid #8c180e;
 }
 
 .menu td {
-  padding: 1.2em 1em;
   border-bottom: 2px solid #8c180e;
   border-top: 2px solid #8c180e;
+  padding: 1.2em 1em;
   vertical-align: top;
 }
 
@@ -306,11 +311,8 @@ nav .icon {
   }
 }
 
-
 form {
   padding: 2em;
-  border-bottom: 2px solid #8c180e;
-  border-top: 2px solid #8c180e;
 }
 
 label.error {
@@ -358,4 +360,18 @@ label {
 .form-row input.error,
 .form-row textarea.error {
   border-color: red;
+}
+
+video {
+  outline: none;
+}
+
+.address {
+  text-align: center;
+  font-size: 1.1em;
+  padding-bottom: 2em;
+}
+
+.content .message {
+  padding: 2em;
 }
