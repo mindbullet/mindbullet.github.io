@@ -82,6 +82,10 @@
             <input type="tel" name="phone" id="phone">
           </div>
           <div class="form-row">
+            <label for="partysize">Number of people in the party?</label>
+            <input type="number" name="partysize" id="partysize">
+          </div>
+          <div class="form-row">
             <label>Make a reservation for <span id="reservation-date">today</span>:</label>
             <table id="reserve-time">
               <tr>
@@ -148,6 +152,11 @@
         rules: {
           username: 'required',
           phone: 'required',
+          partysize: {
+            required: true,
+            min: 1,
+            max: 10,
+          },
           hour: 'required',
           minute: 'required',
           ampm: 'required',
@@ -155,6 +164,11 @@
         messages: {
           username: "Please give us a name for our reservation.",
           phone: "Please leave us a phone number so that we can confirm your reservation.",
+          partysize: {
+            required: 'Let us know how many will be attending. 1 to 10 people per reservation.',
+            min: 'At least one person is required for a reservation.',
+            max: 'Please email reservations@fake.com for parties larger than 10.',
+          },
           hour: 'Choose an hour.',
           minute: 'Choose a minute.',
           ampm: 'Choose AM or PM.',
@@ -180,11 +194,11 @@
       }
 
       var setMinute = (Math.round((minutes + 14)/15) * 15) % 60;
-      if (minutes > 45) hour++;
+      if (minutes > 45) setHour += 1;
 
       // set the time to after the current time
       $("#hour").val(setHour);
-      $("#minute").val(setMinute);
+      $("#minute").val(setMinute == 0 ? '00' : setMinute);
       $("#ampm").val(ampm);
     }
 
