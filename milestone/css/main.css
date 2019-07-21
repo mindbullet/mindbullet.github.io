@@ -285,6 +285,7 @@ header {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
+  text-transform: uppercase;
 }
 
 footer {
@@ -644,4 +645,13 @@ video {
 
 .content .message {
   padding: 2em;
+}
+
+#reserve-time td {
+  padding-right: .5em;
+  font-size: 1.2em;
+}
+
+#reserve-time select {
+  min-width: 64px;
 }

@@ -55,7 +55,73 @@
 
   <main>
     <div class="wrapper">
-      <h1>MAKE A RESERVATION</h1>
+      <h1>Make a Reservation</h1>
+      <div class="description">
+        <div>
+          Reserve your spot and beat the line! Choose a time below to request a reservation for the day. 
+          If you want to reserve a future date, you may also contact us toll-free Monday-Friday 
+          10:00am to 10:00pm (Central Standard Time) at:
+        </div>
+        <br />
+        <a href="tel:818-663-1970" class="mobile">(818) 663-1970</a>
+        <span class="desktop">(818) 663-1970</span>
+      </div>
+      <div class="content"> 
+        <form action="post" method="http://www.markmurtha.com/csis128/readform.asp">
+          <div class="form-row">
+            <label for="username">Party Name</label>
+            <input type="text" name="username" id="username" autofocus>
+          </div>
+          <div class="form-row">
+            <label for="email">E-Mail Address</label>
+            <input type="email" name="email" id="email">
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone">
+          </div>
+          <div class="form-row">
+            <label>Make a reservation for <span id="reservation-date">today</span>:</label>
+            <table id="reserve-time">
+              <tr>
+                <td>
+                  <select id="hour" name="hour">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                </td>
+                <td>
+                  <select id="minute" name="minute">
+                    <option>00</option>
+                    <option>15</option>
+                    <option>30</option>
+                    <option>45</option>
+                  </select>
+                </td>
+                <td>
+                  <select id="ampm" name="ampm">
+                    <option>AM</option>
+                    <option>PM</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="form-footer">
+            <input type="submit" name="form-submit" id="form-submit" value="Reserve a Table">
+          </div>
+        </form>
+      </div>
     </div>
   </main>
 
@@ -71,7 +137,61 @@
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+
+    function initializeValidation() {
+      $('form').validate({
+        rules: {
+          username: 'required',
+          phone: 'required',
+          hour: 'required',
+          minute: 'required',
+          ampm: 'required',
+        },
+        messages: {
+          username: "Please give us a name for our reservation.",
+          phone: "Please leave us a phone number so that we can confirm your reservation.",
+          hour: 'Choose an hour.',
+          minute: 'Choose a minute.',
+          ampm: 'Choose AM or PM.',
+        }
+      }); 
+    }
+
+    function setReservationTime() {
+      // Set time to the next available time
+      var now = new Date();
+      var hour = now.getHours();
+      var minutes = now.getMinutes();
+
+      var ampm;
+      var setHour;
+      if (hour < 12) {
+        ampm = 'AM';
+        setHour = hour;
+      }
+      else {
+        ampm = 'PM';
+        setHour = hour - 12;
+      }
+
+      var setMinute = (Math.round((minutes + 14)/15) * 15) % 60;
+      if (minutes > 45) hour++;
+
+      // set the time to after the current time
+      $("#hour").val(setHour);
+      $("#minute").val(setMinute);
+      $("#ampm").val(ampm);
+    }
+
+    $(function() { 
+      initializeValidation();
+      setReservationTime();
+    });
+  </script>
 </body>
 </html>
