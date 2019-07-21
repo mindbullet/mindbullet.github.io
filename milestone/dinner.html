@@ -1,20 +1,22 @@
 <!doctype html>
 <html class="no-js" lang="en-US">
 <head>
-  <!-- Set up using HTML5 Boilerplate: https://html5boilerplate.com/ -->
   <meta charset="utf-8">
   <title>Dinner Menu - Big Al's Steakhouse</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="stylesheet" href="css/normalize.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <meta name="theme-color" content="#fafafa">
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trnk/html5.js"></script>
   <![endif]-->
+  <!-- "|" character fails html5 validation, however this is the exact link provided by google fonts. -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light&display=swap" rel="stylesheet">
+  <!-- Set up using HTML5 Boilerplate: https://html5boilerplate.com/ -->
 </head>
 <body>
   <header>
@@ -23,7 +25,7 @@
         <tr>
           <td>
             <div class="logo-container">
-              <img src="img/bull-logo.png" class="logo">
+              <img src="img/bull-logo.png" class="logo" alt="Big Al's Steakhouse Bull Logo">
             </div>
           </td>
           <td>
@@ -47,7 +49,7 @@
     ><a href="reservations.html">Reservations</a
     ><a href="contact.html">Contact</a
     ><a href="javascript:void(0);" class="icon" onclick="navMenuFn()">
-      <img src="img/menu-512.png" height="50" width="auto">
+      <img src="img/menu-512.png" height="50" alt="nav menu button">
     </a>
   </nav>
 
